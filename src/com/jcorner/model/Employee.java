@@ -20,6 +20,11 @@ public class Employee {
     private String lastName;
     private Role role;
 
+    // manager view fields
+    private String email;
+    private String address;
+    private String photoPath;   // optional atm
+
     private final Set<String> assignedTableIds = new HashSet<>();
 
     public Employee(String employeeID, String password, String firstName, String lastName, Role role) {
