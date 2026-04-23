@@ -50,9 +50,9 @@ public class DataStore {
     }
 
     // Active (not clocked out) shift record for an employee, or null. 
-    public ShiftRecord activeShiftFor(String employeeId) {
+    public ShiftRecord activeShiftFor(String employeeID) {
         for (ShiftRecord r : shiftRecords) {
-            if (r.getEmployeeId().equals(employeeId) && r.isActive()) return r;
+            if (r.getEmployeeID().equals(employeeID) && r.isActive()) return r;
         }
         return null;
     }
