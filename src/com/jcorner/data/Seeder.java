@@ -19,7 +19,7 @@ public class Seeder {
         for (String c : cols) {
             for (int r = 1; r <= 6; r++) {
                 RestaurantTable t = new RestaurantTable(c, r, 4);
-                ds.tables().put(t.getTableId(), t);
+                ds.tables().put(t.getTableID(), t);
             }
         }
     }
