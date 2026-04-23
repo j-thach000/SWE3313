@@ -6,7 +6,7 @@ import com.offlimes.jcorner.model.RestTable;
 import java.util.*;
 
 
-// In-memory data store. 
+// in-memory data store. 
 // Implemented using a singleton pattern (ONLY one instance of DataStore, globally accessible)
 
 public class DataStore {
@@ -35,4 +35,36 @@ public class DataStore {
     public Map<String, InventoryItem> inventory() { return inventory; }
     public List<ShiftRecord> shiftRecords() { return shiftRecords; }
     public List<RefundRequest> refundRequests() { return refundRequests; }
+
+    // Menu needs to return in a specific order
+    public List<MenuCategory> categoriesSorted() {
+        return categories.values().stream()
+                .sorted(Comparator.comparingInt(MenuCategory::getSortOrder))
+                .toList();
+    }
+
+    // Generates the next unique order ID in "ORD-NNNNN" format. 
+    public synchronized String nextOrderId() {
+        orderCounter++;
+        return String.format("ORD-%05d", orderCounter);
+    }
+
+    // Active (not clocked out) shift record for an employee, or null. 
+    public ShiftRecord activeShiftFor(String employeeId) {
+        for (ShiftRecord r : shiftRecords) {
+            if (r.getEmployeeId().equals(employeeId) && r.isActive()) return r;
+        }
+        return null;
+    }
+
+    public FoodOrder activeOrderForTable(String tableId) {
+        for (FoodOrder o : orders.values()) {
+            if (o.getTableId().equals(tableId)
+                    && o.getStatus() != OrderStatus.SERVED
+                    && o.getStatus() != OrderStatus.CANCELLED) {
+                return o;
+            }
+        }
+        return null;
+    }
 }
