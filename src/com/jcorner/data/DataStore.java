@@ -44,7 +44,7 @@ public class DataStore {
     }
 
     // Generates the next unique order ID in "ORD-NNNNN" format. 
-    public synchronized String nextOrderId() {
+    public synchronized String nextOrderID() {
         orderCounter++;
         return String.format("ORD-%05d", orderCounter);
     }
