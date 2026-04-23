@@ -22,4 +22,12 @@ public class ShiftRecord {
     public LocalDateTime getClockIn() { return clockIn; }
     public LocalDateTime getClockOut() { return clockOut; }
     public void setClockOut(LocalDateTime clockOut) { this.clockOut = clockOut; }
+
+    public double getHoursWorked() {
+        LocalDateTime end = (clockOut != null) ? clockOut : LocalDateTime.now();
+        return Duration.between(clockIn, end).toSeconds() / 3600.0; // seconds per hour
+    }
+
+    public boolean isActive() { return clockOut == null; }
+
 }
