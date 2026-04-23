@@ -32,7 +32,7 @@ public class Employee {
     private final Set<String> assignedTableIds = new HashSet<>();
 
     // days of the week employee is scheduled (0 = Sunday, 1 = Monday, etc.) 
-    private int scheduleMask = 0;
+    private final boolean[] schedule = new boolean[7];
 
     public Employee(String employeeID, String password, String firstName, String lastName, Role role) {
         this.employeeID = employeeID;
@@ -65,5 +65,21 @@ public class Employee {
     public String getAddress() { return address; }
     public void setAddress(String address) { this.address = address; }
 
+    public String getPhotoPath() { return photoPath; }
+    public void setPhotoPath(String photoPath) { this.photoPath = photoPath; }
 
+    public int getFailedLoginCount() { return failedLoginCount; }
+    public void setFailedLoginCount(int failedLoginCount) { this.failedLoginCount = failedLoginCount; }
+
+    public boolean isLocked() { return locked; }
+    public void setLocked(boolean locked) { this.locked = locked; }
+
+    public Set<String> getAssignedTableIds() { return assignedTableIds; }
+
+    public boolean worksDay(int dayOfWeek /* 0=Sun..6=Sat */) {
+    return schedule[dayOfWeek];
+}
+    public void setWorksDay(int dayOfWeek, boolean works) {
+        schedule[dayOfWeek] = works;
+    }
 }
