@@ -1,11 +1,14 @@
-public class Main {
-    /**
-     * J's Corner Restaurant Automation System.
-     * Team OffLimes - Intro to Software Engineering, Section W03 / SP26
-     *
-     * Populates the app w/ sample data and then inserts user at login screen
-     */
-    public static void main(String[] args) {
+package com.jcorner;
 
+import com.jcorner.data.DataStore;
+import com.jcorner.data.Seeder;
+
+public class Main {
+    public static void main(String[] args) {
+        Seeder.seed();
+        System.out.println("Tables:    " + DataStore.get().tables().size());
+        System.out.println("Menu:      " + DataStore.get().menuItems().size());
+        System.out.println("Employees: " + DataStore.get().employees().size());
+        System.out.println("Inventory: " + DataStore.get().inventory().size());
     }
 }

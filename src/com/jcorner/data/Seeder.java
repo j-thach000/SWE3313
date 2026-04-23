@@ -147,13 +147,13 @@ public class Seeder {
         addEmp(ds, id, pw, fn, ln, r, new String[0]);
     }
 
-    private static void addEmp(DataStore ds, String id, String pw, String fn, String ln, Role r, String[] tableIds) {
+    private static void addEmp(DataStore ds, String id, String pw, String fn, String ln, Role r, String[] tableIDs) {
         Employee e = new Employee(id, pw, fn, ln, r);
         e.setEmail((fn.toLowerCase() + "." + ln.toLowerCase() + "@jscorner.com"));
         e.setAddress("Marietta, GA");
         // All employees work Mon-Fri by default (bits 1-5)
         for (int d = 1; d <= 5; d++) e.setWorksDay(d, true);
-        for (String tid : tableIds) e.getAssignedTableIds().add(tid);
+        for (String tid : tableIDs) e.getAssignedTableIDs().add(tid);
         ds.employees().put(id, e);
     }
 
