@@ -9,5 +9,9 @@ public class MenuCategory {
     private final int sortOrder;
     private final List<MenuItem> items = new ArrayList<>();
 
-     
+    public MenuCategory(String categoryID, String name, int sortOrder) {
+        this.categoryID = categoryID;
+        this.name = name;
+        this.sortOrder = sortOrder;
+    }
 }
