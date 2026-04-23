@@ -25,6 +25,9 @@ public class Employee {
     private String address;
     private String photoPath;   // optional atm
 
+    private int failedLoginCount = 0;
+    private boolean locked = false;
+
     private final Set<String> assignedTableIds = new HashSet<>();
 
     public Employee(String employeeID, String password, String firstName, String lastName, Role role) {
@@ -51,4 +54,10 @@ public class Employee {
 
     public Role getRole() { return role; }
     public void setRole(Role role) { this.role = role; }
+
+    public String getEmail() { return email; }
+    public void setEmail(String email) { this.email = email; }
+
+    public String getAddress() { return address; }
+    public void setAddress(String address) { this.address = address; }
 }
