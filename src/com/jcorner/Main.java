@@ -1,36 +1,31 @@
 package com.jcorner;
 
-import com.jcorner.data.DataStore;
 import com.jcorner.data.Seeder;
-import com.jcorner.model.Employee;
-import com.jcorner.service.Session;
+import com.jcorner.ui.AppFrame;
+import com.jcorner.ui.LoginPanel;
 
+import javax.swing.*;
+
+
+// J's Corner Restaurant Automation System.
+// Team OffLimes - Intro to Software Engineering, Section W03 / SP26
+
+// Starting point that seeds the in-memory data store with the menu, tables,
+// and sample employees from the project spec, then shows the login
+// screen.
 public class Main {
+
     public static void main(String[] args) {
         Seeder.seed();
 
-        // 1. Singleton check
-        Session s1 = Session.get();
-        Session s2 = Session.get();
-        System.out.println("Same instance: " + (s1 == s2));       // true
+        try {
+            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+        } catch (Exception ignored) {}
 
-        // 2. Initial state should be null
-        System.out.println("Starts empty: " + (s1.getCurrentUser() == null));  // true
-
-        // 3. Set and retrieve
-        Employee mgr = DataStore.get().employees().get("MG1001");
-        Session.get().setCurrentUser(mgr);
-        Session.get().setSelectedTableID("A1");
-        Session.get().setSelectedSeat(2);
-
-        System.out.println("User stored: " + Session.get().getCurrentUser().getFullName());
-        System.out.println("Table stored: " + Session.get().getSelectedTableID());
-        System.out.println("Seat stored: " + Session.get().getSelectedSeat());
-
-        // 4. Clear wipes everything
-        Session.get().clear();
-        System.out.println("After clear user: " + Session.get().getCurrentUser());        // null
-        System.out.println("After clear table: " + Session.get().getSelectedTableID());   // null
-        System.out.println("After clear seat: " + Session.get().getSelectedSeat());       // null
+        SwingUtilities.invokeLater(() -> {
+            AppFrame frame = new AppFrame();
+            frame.navigate(new LoginPanel());
+            frame.setVisible(true);
+        });
     }
 }
