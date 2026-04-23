@@ -6,9 +6,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class FoodOrder {
-   private final String orderId;
-   private final String serverId;
-   private final String tableId;
+   private final String orderID;
+   private final String serverID;
+   private final String tableID;
    private final LocalDateTime orderTime;
    private LocalDateTime readyTime;
    private LocalDateTime servedTime;
@@ -19,24 +19,24 @@ public class FoodOrder {
    private final List<OrderItem> items = new ArrayList();
 
    public FoodOrder(String var1, String var2, String var3, int var4) {
-      this.orderId = var1;
-      this.serverId = var2;
-      this.tableId = var3;
+      this.orderID = var1;
+      this.serverID = var2;
+      this.tableID = var3;
       this.guestCount = var4;
       this.orderTime = LocalDateTime.now();
       this.status = OrderStatus.PENDING;
    }
 
-   public String getOrderId() {
-      return this.orderId;
+   public String getOrderID() {
+      return this.orderID;
    }
 
-   public String getServerId() {
-      return this.serverId;
+   public String getServerID() {
+      return this.serverID;
    }
 
-   public String getTableId() {
-      return this.tableId;
+   public String getTableID() {
+      return this.tableID;
    }
 
    public LocalDateTime getOrderTime() {
