@@ -29,8 +29,8 @@ public class Session {
 
     public void clear() {
         currentUser = null;
-        selectedTableId = null;
-        selectedOrderId = null;
+        selectedTableID = null;
+        selectedOrderID = null;
         selectedSeat = null;
     }
 }
