@@ -4,7 +4,7 @@
 src/com/jcorner/
 ├── Main.java                   # entry point
 ├── model/                      # concepts the business uses 
-├── data/                       # in-memory DataStore + Seeder
+├── data/                       # in-memory data population
 ├── service/                    # business logic (static methods)
 └── ui/                         # Swing panels
     ├── AppFrame.java           # single JFrame, panel-swap navigation
