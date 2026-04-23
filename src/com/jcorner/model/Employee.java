@@ -3,6 +3,8 @@ package com.offlimes.jcorner.model;
 import java.util.HashSet;
 import java.util.Set;
 
+import javax.management.relation.Role;
+
 /**
  * Represents a staff member. The Role field determines which dashboard
  * is displayed after login. Design-doc fields: employeeId, password,
@@ -27,4 +29,21 @@ public class Employee {
         this.lastName = lastName;
         this.role = role;
     }
+
+    public String getEmployeeID() { return employeeID; }
+    public void setEmployeeID(String employeeID) {this.employeeID = employeeID; }
+
+    public String getPassword() { return password; }
+    public void setPassword(String password) { this.password = password; }
+
+    public String getFirstName() { return firstName; }
+    public void setFirstName(String firstName) { this.firstName = firstName; }
+
+    public String getLastName() { return lastName; }
+    public void setLastName(String lastName) { this.lastName = lastName; }
+
+    public String getFullName() { return firstName + " " + lastName; }
+
+    public Role getRole() { return role; }
+    public void setRole(Role role) { this.role = role; }
 }
