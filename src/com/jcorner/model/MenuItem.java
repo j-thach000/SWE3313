@@ -8,4 +8,13 @@ public class MenuItem {
     private boolean isAvailable = true;
     private MenuCategory category;
 
+    public MenuItem(String itemID, String name, double price, String description, MenuCategory category) {
+        this.itemID = itemID;
+        this.name = name;
+        this.price = price;
+        this.description = description;
+        this.category = category;
+        category.getItems().add(this);
+    }
+
 }
