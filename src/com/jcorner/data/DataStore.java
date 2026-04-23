@@ -57,9 +57,9 @@ public class DataStore {
         return null;
     }
 
-    public FoodOrder activeOrderForTable(String tableId) {
+    public FoodOrder activeOrderForTable(String tableID) {
         for (FoodOrder o : orders.values()) {
-            if (o.getTableId().equals(tableId)
+            if (o.getTableID().equals(tableID)
                     && o.getStatus() != OrderStatus.SERVED
                     && o.getStatus() != OrderStatus.CANCELLED) {
                 return o;
