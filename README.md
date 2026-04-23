@@ -10,7 +10,7 @@ service/   ← business logic (login rules, order workflow, reports)
 data/      ← in-memory storage (the DataStore singleton + Seeder)
    │
    ▼
-model/     ← the concepts (Employee, Order, Table, MenuItem...)
+model/     ← the domain concepts (Employee, Order, Table, MenuItem, etc.)
 ```
 
 ```
