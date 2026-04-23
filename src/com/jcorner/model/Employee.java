@@ -19,5 +19,12 @@ public class Employee {
     private Role role;
 
     private final Set<String> assignedTableIds = new HashSet<>();
-    
+
+    public Employee(String employeeID, String password, String firstName, String lastName, Role role) {
+        this.employeeID = employeeID;
+        this.password = password;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.role = role;
+    }
 }
