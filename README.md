@@ -1,6 +1,19 @@
 ## Architecture
 
 ```
+ui/        ← what the user sees and clicks (Swing windows)
+   │
+   ▼
+service/   ← business logic (login rules, order workflow, reports)
+   │
+   ▼
+data/      ← in-memory storage (the DataStore singleton + Seeder)
+   │
+   ▼
+model/     ← the nouns (Employee, Order, Table, MenuItem...)
+```
+
+```
 src/com/jcorner/
 ├── Main.java                   # entry point
 ├── model/                      # concepts the business uses 
