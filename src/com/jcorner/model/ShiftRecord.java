@@ -16,4 +16,10 @@ public class ShiftRecord {
         this.employeeID = employeeID;
         this.clockIn = clockIn;
     }
+
+    public long getRecordID() { return recordID; }
+    public String getEmployeeID() { return employeeID; }
+    public LocalDateTime getClockIn() { return clockIn; }
+    public LocalDateTime getClockOut() { return clockOut; }
+    public void setClockOut(LocalDateTime clockOut) { this.clockOut = clockOut; }
 }
