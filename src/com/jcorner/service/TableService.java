@@ -8,7 +8,7 @@ public class TableService {
 
     // Changes table status (busboy clean, waiter mark dirty, etc.). 
     public static void changeStatus(String tableID, TableStatus newStatus) {
-        RestTable t = DataStore.get().tables().get(tableID);
+        RestaurantTable t = DataStore.get().tables().get(tableID);
         if (t != null) t.setStatus(newStatus);
     }
 
@@ -21,7 +21,7 @@ public class TableService {
     }
 
     public static void markOccupied(String tableID, int guestCount) {
-        RestTable t = DataStore.get().tables().get(tableID);
+        RestaurantTable t = DataStore.get().tables().get(tableID);
         if (t != null) {
             t.setStatus(TableStatus.OCCUPIED);
             t.setCurrentGuestCount(guestCount);
