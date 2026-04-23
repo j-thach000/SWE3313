@@ -26,4 +26,11 @@ public class Session {
 
     public Integer getSelectedSeat() { return selectedSeat; }
     public void setSelectedSeat(Integer selectedSeat) { this.selectedSeat = selectedSeat; }
+
+    public void clear() {
+        currentUser = null;
+        selectedTableId = null;
+        selectedOrderId = null;
+        selectedSeat = null;
+    }
 }
