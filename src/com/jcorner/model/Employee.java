@@ -5,7 +5,7 @@ import java.util.Set;
 
 /**
  * Represents a staff member. The Role field determines which dashboard
- * is displayed after login. Design-doc fields: employeeId, password,
+ * is displayed after login. Design-doc fields: employeeID, password,
  * firstName, lastName, role. Extra fields support the manager's
  * "manage employees" screen (email, address, photo, schedule, table
  * assignments for waiters).
@@ -27,7 +27,7 @@ public class Employee {
     private boolean locked = false;
 
     // tables scheduled to waiters
-    private final Set<String> assignedTableIds = new HashSet<>();
+    private final Set<String> assignedTableIDs = new HashSet<>();
 
     // days of the week employee is scheduled (0 = Sunday, 1 = Monday, etc.) 
     private final boolean[] schedule = new boolean[7];
@@ -72,7 +72,7 @@ public class Employee {
     public boolean isLocked() { return locked; }
     public void setLocked(boolean locked) { this.locked = locked; }
 
-    public Set<String> getAssignedTableIds() { return assignedTableIds; }
+    public Set<String> getAssignedTableIDs() { return assignedTableIDs; }
 
     public boolean worksDay(int dayOfWeek /* 0=Sun..6=Sat */) {
     return schedule[dayOfWeek];
