@@ -6,11 +6,8 @@ import java.util.List;
 public class MenuCategory {
     private final String categoryID;
     private String name;
-    private double price;
-    private String description;
-    private boolean isAvailable = true;
-    private MenuCategory category;
+    private final int sortOrder;
+    private final List<MenuItem> items = new ArrayList<>();
 
-    
-
+     
 }
