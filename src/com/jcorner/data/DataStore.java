@@ -1,6 +1,7 @@
 package com.jcorner.data;
 
 import com.jcorner.model.*;
+import com.offlimes.jcorner.model.RestTable;
 
 import java.util.*;
 
@@ -24,4 +25,5 @@ public class DataStore {
 
     private int orderCounter = 4800;       // matches design doc's ORD-048xx style
 
+    private DataStore() {}
 }
