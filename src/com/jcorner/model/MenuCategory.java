@@ -20,4 +20,10 @@ public class MenuCategory {
     public void setName(String name) { this.name = name; }
     public int getSortOrder() { return sortOrder; }
     public List<MenuItem> getItems() { return items; }
+
+    // Filters out items flagged isAvailable=false so they don't appear in ordering UI.
+    // using built-in library functions for succinctness
+    public List<MenuItem> getAvailableItems() {
+        return items.stream().filter(MenuItem::isAvailable).toList();
+    }
 }
