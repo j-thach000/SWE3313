@@ -22,4 +22,16 @@ public class RefundRequest {
         this.requestedAt = LocalDateTime.now();
         this.status = RefundStatus.PENDING;
     }
+
+    public long getRefundId() { return refundId; }
+    public String getOrderId() { return orderId; }
+    public String getRequestedBy() { return requestedBy; }
+    public double getAmount() { return amount; }
+    public LocalDateTime getRequestedAt() { return requestedAt; }
+    public RefundStatus getStatus() { return status; }
+    public void setStatus(RefundStatus status) { this.status = status; }
+    public String getApprovedBy() { return approvedBy; }
+    public void setApprovedBy(String approvedBy) { this.approvedBy = approvedBy; }
+    public LocalDateTime getResolvedAt() { return resolvedAt; }
+    public void setResolvedAt(LocalDateTime resolvedAt) { this.resolvedAt = resolvedAt; }
 }
