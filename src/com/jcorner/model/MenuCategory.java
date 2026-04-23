@@ -14,4 +14,10 @@ public class MenuCategory {
         this.name = name;
         this.sortOrder = sortOrder;
     }
+
+    public String getCategoryID() { return categoryID; }
+    public String getName() { return name; }
+    public void setName(String name) { this.name = name; }
+    public int getSortOrder() { return sortOrder; }
+    public List<MenuItem> getItems() { return items; }
 }
