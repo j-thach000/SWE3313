@@ -18,5 +18,6 @@ public class Employee {
     private String lastName;
     private Role role;
 
+    private final Set<String> assignedTableIds = new HashSet<>();
     
 }
