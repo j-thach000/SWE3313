@@ -27,4 +27,7 @@ public class MenuItem {
     public boolean isAvailable() { return isAvailable; }
     public void setAvailable(boolean available) { isAvailable = available; }
     public MenuCategory getCategory() { return category; }
+
+    @Override
+    public String toString() { return name; } 
 }
