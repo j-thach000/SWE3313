@@ -28,7 +28,11 @@ public class Employee {
     private int failedLoginCount = 0;
     private boolean locked = false;
 
+    // tables scheduled to waiters
     private final Set<String> assignedTableIds = new HashSet<>();
+
+    // days of the week employee is scheduled (0 = Sunday, 1 = Monday, etc.) 
+    private int scheduleMask = 0;
 
     public Employee(String employeeID, String password, String firstName, String lastName, Role role) {
         this.employeeID = employeeID;
@@ -60,4 +64,6 @@ public class Employee {
 
     public String getAddress() { return address; }
     public void setAddress(String address) { this.address = address; }
+
+
 }
