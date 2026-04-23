@@ -1,7 +1,7 @@
 package com.jcorner.data;
 
 import com.jcorner.mode.*;
-import com.offlimes.jcorner.model.RestTable;
+import com.offlimes.jcorner.model.RestaurantTable;
 
 // populate DataStore w/ initial data scraped from project documents on D2L via LLM
 public class Seeder {
@@ -18,7 +18,7 @@ public class Seeder {
         String[] cols = {"A", "B", "C", "D", "E", "F"};
         for (String c : cols) {
             for (int r = 1; r <= 6; r++) {
-                RestTable t = new RestTable(c, r, 4);
+                RestaurantTable t = new RestaurantTable(c, r, 4);
                 ds.tables().put(t.getTableId(), t);
             }
         }
