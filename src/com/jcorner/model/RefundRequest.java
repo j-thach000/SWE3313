@@ -13,6 +13,4 @@ public class RefundRequest {
     private LocalDateTime resolvedAt;
     
     private static long nextID = 1;
-
-
 }
