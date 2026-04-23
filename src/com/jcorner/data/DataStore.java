@@ -1,7 +1,7 @@
 package com.jcorner.data;
 
 import com.jcorner.model.*;
-import com.offlimes.jcorner.model.RestTable;
+import com.offlimes.jcorner.model.RestaurantTable;
 
 import java.util.*;
 
@@ -15,7 +15,7 @@ public class DataStore {
     public static DataStore get() { return INSTANCE; }
 
     private final Map<String, Employee> employees = new LinkedHashMap<>();
-    private final Map<String, RestTable> tables = new LinkedHashMap<>();
+    private final Map<String, RestaurantTable> tables = new LinkedHashMap<>();
     private final Map<String, MenuCategory> categories = new LinkedHashMap<>();
     private final Map<String, MenuItem> menuItems = new LinkedHashMap<>();
     private final Map<String, FoodOrder> orders = new LinkedHashMap<>();
@@ -28,7 +28,7 @@ public class DataStore {
     private DataStore() {}
 
     public Map<String, Employee> employees() { return employees; }
-    public Map<String, RestTable> tables() { return tables; }
+    public Map<String, RestaurantTable> tables() { return tables; }
     public Map<String, MenuCategory> categories() { return categories; }
     public Map<String, MenuItem> menuItems() { return menuItems; }
     public Map<String, FoodOrder> orders() { return orders; }
