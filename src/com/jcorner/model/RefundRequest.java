@@ -13,4 +13,13 @@ public class RefundRequest {
     private LocalDateTime resolvedAt;
     
     private static long nextID = 1;
+
+    public RefundRequest(String orderID, String requestedBy, double amount) {
+        this.refundID = nextID++;
+        this.orderID = orderID;
+        this.requestedBy = requestedBy;
+        this.amount = amount;
+        this.requestedAt = LocalDateTime.now();
+        this.status = RefundStatus.PENDING;
+    }
 }
