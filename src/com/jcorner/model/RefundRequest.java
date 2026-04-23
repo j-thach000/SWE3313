@@ -23,8 +23,8 @@ public class RefundRequest {
         this.status = RefundStatus.PENDING;
     }
 
-    public long getRefundId() { return refundId; }
-    public String getOrderId() { return orderId; }
+    public long getRefundID() { return refundID; }
+    public String getOrderID() { return orderID; }
     public String getRequestedBy() { return requestedBy; }
     public double getAmount() { return amount; }
     public LocalDateTime getRequestedAt() { return requestedAt; }
