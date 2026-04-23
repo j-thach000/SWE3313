@@ -10,12 +10,20 @@ public class OrderItem {
     private static long nextID = 1;
 
     public OrderItem(MenuItem menuItem, int seatNumber, int quantity, String specialInstructions) {
-        this.orderItemId = nextId++;
+        this.orderItemID = nextID++;
         this.menuItem = menuItem;
         this.seatNumber = seatNumber;
         this.quantity = quantity;
         this.specialInstructions = specialInstructions;
     }
 
-    
+    public long getOrderItemID() { return orderItemID; }
+    public MenuItem getMenuItem() { return menuItem; }
+    public int getSeatNumber() { return seatNumber; }
+    public int getQuantity() { return quantity; }
+    public void setQuantity(int quantity) { this.quantity = quantity; }
+    public String getSpecialInstructions() { return specialInstructions; }
+    public void setSpecialInstructions(String specialInstructions) { this.specialInstructions = specialInstructions; }
+
+    public double getSubtotal() { return menuItem.getPrice() * quantity; }
 }
