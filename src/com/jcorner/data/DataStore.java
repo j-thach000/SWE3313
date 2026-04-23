@@ -26,4 +26,13 @@ public class DataStore {
     private int orderCounter = 4800;       // matches design doc's ORD-048xx style
 
     private DataStore() {}
+
+    public Map<String, Employee> employees() { return employees; }
+    public Map<String, RestTable> tables() { return tables; }
+    public Map<String, MenuCategory> categories() { return categories; }
+    public Map<String, MenuItem> menuItems() { return menuItems; }
+    public Map<String, FoodOrder> orders() { return orders; }
+    public Map<String, InventoryItem> inventory() { return inventory; }
+    public List<ShiftRecord> shiftRecords() { return shiftRecords; }
+    public List<RefundRequest> refundRequests() { return refundRequests; }
 }
