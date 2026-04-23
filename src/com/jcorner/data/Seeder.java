@@ -176,5 +176,7 @@ public class Seeder {
         inv(ds, "INV15", "Sweet Tea Bags",    80, "ct",    30);
     }
 
- 
+    private static void inv(DataStore ds, String id, String name, int qty, String unit, int low) {
+        ds.inventory().put(id, new InventoryItem(id, name, qty, unit, low));
+    }
 }
