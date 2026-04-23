@@ -1,9 +1,7 @@
-package com.offlimes.jcorner.model;
+package com.jcorner.model;
 
 import java.util.HashSet;
 import java.util.Set;
-
-import javax.management.relation.Role;
 
 /**
  * Represents a staff member. The Role field determines which dashboard
