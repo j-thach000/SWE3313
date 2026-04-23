@@ -1,7 +1,7 @@
 package com.jcorner.data;
 
 import com.jcorner.model.*;
-import com.offlimes.jcorner.model.RestaurantTable;
+import com.jcorner.model.RestaurantTable;
 
 import java.util.*;
 

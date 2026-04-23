@@ -1,7 +1,7 @@
 package com.jcorner.data;
 
 import com.jcorner.mode.*;
-import com.offlimes.jcorner.model.RestaurantTable;
+import com.jcorner.model.RestaurantTable;
 
 // populate DataStore w/ initial data scraped from project documents on D2L via LLM
 public class Seeder {
