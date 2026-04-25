@@ -32,7 +32,7 @@ public final class UIStyle {
         b.setFocusPainted(false);
         b.setFont(HEADER);
         b.setBorder(BorderFactory.createEmptyBorder(10, 18, 10, 18));
-        // Force opaque painting on macOS LaF
+        // force opaque painting on macOS LaF
         b.setOpaque(true);
         b.setBorderPainted(false);
         return b;
@@ -73,7 +73,7 @@ public final class UIStyle {
         return BorderFactory.createEmptyBorder(px, px, px, px);
     }
 
-    public static Color tableColor(com.offlimes.jcorner.model.TableStatus s) {
+    public static Color tableColor(com.jcorner.model.TableStatus s) {
         return switch (s) {
             case READY    -> READY;
             case OCCUPIED -> OCCUPIED;
