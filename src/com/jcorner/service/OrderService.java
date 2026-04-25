@@ -21,6 +21,8 @@ public class OrderService {
 
     // adds an item to the order for a specific seat. Flips status to IN_PROGRESS. 
     public static void addItem(String orderID, MenuItem menuItem, int seat, int qty, String notes) {
+        System.out.println("addItem: orderID=" + orderID + " item=" + menuItem.getName()
+                     + " seat=" + seat);
         FoodOrder o = DataStore.get().orders().get(orderID);
         if (o == null) return;
         if (!menuItem.isAvailable()) return;
@@ -88,6 +90,7 @@ public class OrderService {
     public static List<FoodOrder> readyOrders() {
         return DataStore.get().orders().values().stream()
                 .filter(o -> o.getStatus() == OrderStatus.READY)
+                .filter(o -> o.getServedTime() == null)
                 .sorted(Comparator.comparing(FoodOrder::getReadyTime))
                 .toList();
     }
