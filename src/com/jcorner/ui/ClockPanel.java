@@ -30,21 +30,21 @@ public class ClockPanel extends JPanel {
         center.add(clockLabel, c);
 
         c.gridy = 1;
-        String empId = Session.get().getCurrentUser().getEmployeeId();
-        center.add(UIStyle.label("EMPLOYEE ID: " + empId, UIStyle.HEADER), c);
+        String empID = Session.get().getCurrentUser().getEmployeeID();
+        center.add(UIStyle.label("EMPLOYEE ID: " + empID, UIStyle.HEADER), c);
 
         c.gridwidth = 1; c.gridy = 2;
         JButton in = UIStyle.button("CLOCK IN");
         in.setBackground(UIStyle.READY);
         in.setForeground(Color.BLACK);
-        in.addActionListener(e -> { ShiftService.clockIn(empId); refresh(); });
+        in.addActionListener(e -> { ShiftService.clockIn(empID); refresh(); });
         center.add(in, c);
 
         c.gridx = 1;
         JButton out = UIStyle.button("CLOCK OUT");
         out.setBackground(UIStyle.DIRTY);
         out.setForeground(Color.WHITE);
-        out.addActionListener(e -> { ShiftService.clockOut(empId); refresh(); });
+        out.addActionListener(e -> { ShiftService.clockOut(empID); refresh(); });
         center.add(out, c);
 
         c.gridx = 0; c.gridy = 3; c.gridwidth = 2;
@@ -62,8 +62,8 @@ public class ClockPanel extends JPanel {
     private void refresh() {
         clockLabel.setText("CURRENT TIME: " +
                 LocalDateTime.now().format(DateTimeFormatter.ofPattern("HH:mm:ss")));
-        String empId = Session.get().getCurrentUser().getEmployeeId();
-        ShiftRecord active = DataStore.get().activeShiftFor(empId);
+        String empID = Session.get().getCurrentUser().getEmployeeID();
+        ShiftRecord active = DataStore.get().activeShiftFor(empID);
         long totalSeconds;
         if (active != null) {
             totalSeconds = Duration.between(active.getClockIn(), LocalDateTime.now()).toSeconds();
@@ -71,7 +71,7 @@ public class ClockPanel extends JPanel {
             // sum of today's completed shifts
             LocalDateTime start = LocalDateTime.now().toLocalDate().atStartOfDay();
             totalSeconds = DataStore.get().shiftRecords().stream()
-                    .filter(r -> r.getEmployeeId().equals(empId))
+                    .filter(r -> r.getEmployeeID().equals(empID))
                     .filter(r -> r.getClockIn().isAfter(start))
                     .filter(r -> r.getClockOut() != null)
                     .mapToLong(r -> Duration.between(r.getClockIn(), r.getClockOut()).toSeconds())
